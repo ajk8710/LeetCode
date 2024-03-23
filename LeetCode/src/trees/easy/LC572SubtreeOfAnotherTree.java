@@ -14,7 +14,25 @@ public class LC572SubtreeOfAnotherTree {
     
     // For each root-tree's node, compare if it's same tree as subRoot-tree. Return true if same tree found.
     // This works because a same tree but having extra descendant is not considered as a sub-tree.
+    
+    // This method uses DFS to traverse down.
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        if (isSameTree(root, subRoot)) {  // Compare me with subRoot-tree
+            return true;
+        }
+        if (root == null) {  // Traversed all the way down, but did not find a node that is same tree.
+            return false;
+        }
+        
+        // If same tree found (either from left or right), it will stop traversing down but return true.
+        // Then return true || whichever result from the other side.
+        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+        
+    }
+    
+    
+    // This method uses BFS to traverse down.
+    public boolean isSubtreeBFS(TreeNode root, TreeNode subRoot) {
         
         // Create a list of every nodes of root-tree.
         ArrayList<TreeNode> allNodes = new ArrayList<>();
