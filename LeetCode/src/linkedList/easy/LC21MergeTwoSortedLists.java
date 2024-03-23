@@ -1,4 +1,6 @@
-package linkedList;
+package linkedList.easy;
+
+import linkedList.ListNode;
 
 public class LC21MergeTwoSortedLists {
     
