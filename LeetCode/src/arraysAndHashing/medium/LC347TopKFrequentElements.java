@@ -11,7 +11,7 @@ import java.util.List;
 // Output: [1, 2]
 public class LC347TopKFrequentElements {
     
-    // Method using HashSet, then creating an array of number lists. Time: O(n)
+    // Method using HashMap, then creating an array of number lists. Time: O(n)
     // For the array, index means frequency, value means a list of the numbers of that frequency.
     // Starting from last index, if list is not null, add numbers of the list into rv. Stop when added k numbers.
     public int[] topKFrequent(int[] nums, int k) {
